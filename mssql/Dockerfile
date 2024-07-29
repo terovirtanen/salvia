@@ -7,7 +7,8 @@ WORKDIR /usr/src
 COPY . /usr/src
 
 
-RUN mkdir -p  /var/opt/mssql && chgrp -R 0 /var/opt/mssql && chmod g+w -R /var/opt/mssql
+RUN mkdir -p  /var/opt/mssql/data && chgrp -R 0 /var/opt/mssql/data && chmod g+w -R /var/opt/mssql/data
+RUN mkdir -p  /var/opt/mssql/log && chgrp -R 0 /var/opt/mssql/log && chmod g+w -R /var/opt/mssql/log
 
 ENTRYPOINT /bin/bash ./entrypoint.sh
 
