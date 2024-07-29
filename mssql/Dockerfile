@@ -6,5 +6,9 @@ WORKDIR /usr/src
 # Copy files over
 COPY . /usr/src
 
+
+RUN chgrp -R 0 /opt/mssql/bin && chmod g+r -R /opt/mssql/bin
+RUN chgrp -R 0 /opt/mssql-tools/bin && chmod g+r -R /opt/mssql-tools/bin
+
 ENTRYPOINT /bin/bash ./entrypoint.sh
 
